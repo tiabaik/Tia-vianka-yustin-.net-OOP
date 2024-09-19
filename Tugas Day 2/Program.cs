@@ -1,56 +1,15 @@
 ﻿using System;
+using Tugas_Day_2;
 
 namespace TugasDay2
 {
     // Kelas dasar User
-    public class User
-    {
-        private string nama;
-        private string role;
-        private decimal emoney;
-        public string Nama { get { return nama; } set { nama = value; } }
-        public string Role { get { return role; } set { role = value; } }
-        public decimal Emoney { get { return emoney; } set { emoney = value; } }
-
-        public User(string nama, string role, decimal emoney)
-        {
-            Nama = nama;
-            Role = role;
-            Emoney = emoney;
-        }
-    }
+    
 
     // Kelas turunan Admin dari User
-    public class Admin : User
-    {
-        public Admin() : base("Admin", "Admin", 0) 
-        {
-        }
-
-        // Method untuk menambah saldo Customer
-        public void TambahSaldo(Customer customer, decimal jumlah)
-        {
-            decimal saldoLama = customer.Emoney;
-            customer.Emoney += jumlah;
-            Console.WriteLine($"Saldo lama {customer.Nama}: {saldoLama:C}");
-            Console.WriteLine($"Saldo baru yang ditambahkan: {jumlah:C}");
-            Console.WriteLine($"Saldo total sekarang: {customer.Emoney:C}");
-        }
-    }
 
     // Kelas turunan Customer dari User
-    public class Customer : User
-    {
-        public Customer(string nama, decimal emoney)
-            : base(nama, "Customer", emoney)
-        {
-        }
 
-        public void LihatSaldo()
-        {
-            Console.WriteLine($"Saldo {Nama}: {Emoney:C}");
-        }
-    }
 
     class Program
     {
